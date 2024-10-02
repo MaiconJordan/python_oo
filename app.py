@@ -85,7 +85,6 @@ def listar_restaurantes():
     '''
     exibir_subtitulo('Listando restaurantes')
 
-    print(f'{'Nome do restaurante'.ljust(22)} | {'Categoria'.ljust(20)} | Status')
     for restaurante in restaurantes:
         nome_restaurante = restaurante['nome']
         categoria = restaurante['categoria']
