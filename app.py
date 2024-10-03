@@ -1,8 +1,7 @@
 from Restaurante import Restaurante
 
-restaurante = Restaurante('Nome', 'teste')
-restaurante_mexicano = Restaurante('Mexican Food', 'Mexicana')
-restaurante_japones = Restaurante('Japa', 'Japonesa')
+restaurante_praca = Restaurante('Nome', 'teste')
+restaurante_praca.receber_avaliacao('Gui', 10)
 
 def main():
     Restaurante.listar_restaurantes()
