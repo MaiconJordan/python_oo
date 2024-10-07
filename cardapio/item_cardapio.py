@@ -1,4 +1,4 @@
-from abc import ABC, classmethod
+from abc import ABC, abstractmethod
 
 
 class ItemCardapio(ABC): 
@@ -7,6 +7,6 @@ class ItemCardapio(ABC):
         self._nome = nome
         self._preco = preco
 
-@classmethod
+@abstractmethod
 def aplicar_desconto(self):
     pass
