@@ -1,9 +1,9 @@
 class Cachorro:
-    nome = 'Toto'
-    idade = 4
-    cor = "Preto"
+    def __init__(self, nome, idade, cor) -> None:
+        self.nome = nome
+        self.idade = idade
+        self.cor = cor
 
     def latir(self):
         return "au au"
     
-Cachorro.latir
