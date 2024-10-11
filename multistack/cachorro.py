@@ -1,8 +1,8 @@
-class Cachorro:
-    def __init__(self, nome, idade, cor) -> None:
-        self.nome = nome
-        self.idade = idade
-        self.cor = cor
+from animal import Animal
+
+class Cachorro(Animal):
+    def __init__(self, nome, idade, cor):
+        super().__init__(nome, idade, cor)
 
     def latir(self):
         return "au au"
