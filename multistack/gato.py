@@ -1,6 +1,7 @@
 from animal import Animal
+from interface_animal import InterfaceAnimeal
 
-class Gato(Animal):
+class Gato(Animal, InterfaceAnimeal):
     def __init__(self, nome, idade, cor, qtd_bonilhas) -> None:
         super().__init__(nome, idade, cor)
         self.__qtd_bonilhas = qtd_bonilhas
@@ -15,3 +16,9 @@ class Gato(Animal):
 
     def miar(self):
         return "miau"
+
+    def fazer_barulho(self):
+        return "miau"
+
+    def brincar(self):
+        pass
