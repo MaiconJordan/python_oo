@@ -1,7 +1,11 @@
 import turtle
 bob = turtle.Turtle()
-for i in range(4):
-    bob.fd(100)
-    bob.lt(90)
-print(bob)
+def polygon(t, n, length):
+    angle = 360 / n
+    for i in range(n):
+        t.fd(length)
+        t.lt(angle)
+        
+
+polygon(bob, 7, 70)
 turtle.mainloop()
