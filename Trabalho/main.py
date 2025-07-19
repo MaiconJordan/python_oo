@@ -24,9 +24,8 @@ class TabelaHash:
             self.tabela[posicao] = nodo
     
     def inserir_estado(self, sigla, nomeEstado):
-        posicao = self.funcao_hash(sigla)
         nodo = Nodo(sigla, nomeEstado)
-        self.inserir_inicio(posicao, nodo)
+        self.inserir_inicio(nomeEstado, nodo)
     
     def imprimir_tabela(self):
         print("=== TABELA HASH ===")
