@@ -1,0 +1,31 @@
+
+#EXEMPLO RUIM QUE QUEBRA O I DE SOLID
+
+from abc import ABC, abstractmethod
+
+class Trabalhador(ABC):
+    @abstractmethod
+    def trabalhar(self):
+        pass
+
+    @abstractmethod
+    def comer(self):
+        pass
+
+
+
+class Humano(Trabalhador):
+    def trabalhar(self):
+        print("Humano está trabalhando")
+
+    def comer(self):
+        print("Humano está comendo")
+
+class Robô(Trabalhador):
+    def trabalhar(self):
+        print("Robô está trabalhando")
+
+    def comer(self):
+        raise NotImplementedError("Robôs não comem")
+
+
