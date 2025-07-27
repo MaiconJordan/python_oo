@@ -1,24 +1,25 @@
 import turtle
 
-# Cores dos anéis olímpicos
-cores = ["blue", "black", "red", "yellow", "green"]
-
-# Posições dos anéis (x, y)
-posicoes = [(-120, 0), (0, 0), (120, 0), (-60, -50), (60, -50)]
-
-# Cria a janela e a tartaruga
-tela = turtle.Screen()
+# Configurações iniciais
 t = turtle.Turtle()
-t.width(8)
+t.hideturtle()
 t.speed(0)
+turtle.bgcolor("white")
+t.pensize(20)
+t.pencolor("black")
 
-# Desenha os cinco anéis
-for cor, pos in zip(cores, posicoes):
+# Função para desenhar uma barra inclinada
+def barra(x, y, altura, inclinacao):
     t.penup()
-    t.goto(pos)
+    t.goto(x, y)
+    t.setheading(inclinacao)
     t.pendown()
-    t.pencolor(cor)
-    t.circle(60)
+    t.forward(altura)
+    t.penup()
 
-# Mantém a janela aberta até que seja fechada
-tela.mainloop()
+# Desenha as três barras
+barra(-100, -50, 180, 75)
+barra(-30, -50, 140, 75)
+barra(30, -50, 100, 75)
+
+turtle.done()
