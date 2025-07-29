@@ -1,15 +1,11 @@
 from .constructor.introduction_process import introduction_process
+from .constructor.people_register_view import people_register_constructor
+from .constructor.people_finder_constructor import people_finder_constructor
 
 def start():
     while True:
         command = introduction_process()
-        if command == '1':
-            print("Cadastrar cliente")
-            # Logic for registering a client would go here
-        elif command == '2':
-            print("Listar clientes")
-            # Logic for listing clients would go here
-        elif command == '3':
-            exit()
-        else:
-            print("Opção inválida, tente novamente.")
+        if command == '1': people_register_constructor()
+        elif command == '2': people_finder_constructor()
+        elif command == '3': exit()
+        else: print("Opção inválida, tente novamente.")
