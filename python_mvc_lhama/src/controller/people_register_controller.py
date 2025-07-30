@@ -1,0 +1,27 @@
+from typing import Dict
+
+class PeopleRegisterView:
+    def register(self, new_person_register_information: Dict) -> Dict:
+        try:
+            self.__validate_fields(new_person_register_information)
+
+            response = self.__format_response(new_person_register_information)
+            return {"success": True, "message": response}
+        except Exception as exeption:
+            return {"success": False, "message": str(exeption)}
+        
+
+    def __validate_fields(self, new_person_register_information: Dict):
+        if not new_person_register_information.get("name"):
+            raise ValueError("O nome é obrigatório.")
+        try: int(new_person_register_information.get("age"))
+        except ValueError: raise ValueError("A idade deve ser um número.")
+        try: float(new_person_register_information.get("height"))
+        except ValueError: raise ValueError("A altura deve ser um número.")
+
+    def __format_response(self, new_person_register_information: Dict) -> str:
+        return {
+            "id": 1,
+            "Type": "Person",
+            "Attribute": new_person_register_information
+        }
