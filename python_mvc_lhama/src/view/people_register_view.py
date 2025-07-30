@@ -20,6 +20,7 @@ class PeopleRegisterView:
     
     def registry_person_sucess(self, message: Dict) -> None:
         os.system('clear')
+        
         sucess_message = f'''
         Cadastro realizado com sucesso!
         I

@@ -1,6 +1,6 @@
 from typing import Dict
 
-class PeopleRegisterView:
+class PeopleRegisterController:
     def register(self, new_person_register_information: Dict) -> Dict:
         try:
             self.__validate_fields(new_person_register_information)
@@ -11,12 +11,14 @@ class PeopleRegisterView:
             return {"success": False, "message": str(exeption)}
         
 
-    def __validate_fields(self, new_person_register_information: Dict):
-        if not new_person_register_information.get("name"):
+    def __validate_fields(self, new_person_information: Dict):
+        if not isinstance(new_person_information["name"], str):
             raise ValueError("O nome é obrigatório.")
-        try: int(new_person_register_information.get("age"))
+        
+        try: int(new_person_information.get("age"))
         except ValueError: raise ValueError("A idade deve ser um número.")
-        try: float(new_person_register_information.get("height"))
+
+        try: float(new_person_information.get("height"))
         except ValueError: raise ValueError("A altura deve ser um número.")
 
     def __format_response(self, new_person_register_information: Dict) -> str:
