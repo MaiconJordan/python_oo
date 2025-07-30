@@ -15,15 +15,15 @@ class PeopleRegisterController:
         if not isinstance(new_person_information["name"], str):
             raise ValueError("O nome é obrigatório.")
         
-        try: int(new_person_information.get("age"))
+        try: int(new_person_information["age"])
         except ValueError: raise ValueError("A idade deve ser um número.")
 
-        try: float(new_person_information.get("height"))
+        try: int(new_person_information["hight"])
         except ValueError: raise ValueError("A altura deve ser um número.")
 
     def __format_response(self, new_person_register_information: Dict) -> str:
         return {
             "id": 1,
-            "Type": "Person",
-            "Attribute": new_person_register_information
+            "type": "Person",
+            "attribute": new_person_register_information
         }
