@@ -15,7 +15,7 @@ class PeopleRegisterView:
             "age": age,
             "hight": hight
         }
-
+        
         return  new_person_informations
     
     def registry_person_sucess(self, message: Dict) -> None:

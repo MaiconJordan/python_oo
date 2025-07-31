@@ -5,6 +5,7 @@ from .constructor.people_finder_constructor import people_finder_constructor
 def start():
     while True:
         command = introduction_process()
+        
         if command == '1': people_register_constructor()
         elif command == '2': people_finder_constructor()
         elif command == '3': exit()
