@@ -14,4 +14,12 @@ class PeopleFinderController:
         if not isinstance(person_finder_information["name"], str):
             raise ValueError("O nome é obrigatório e deve ser uma string não vazia.")
         
-    
+    def __format_response(self, person_finder_information: str) -> Dict:
+        # Simulate a response format
+        return {
+            "count": 1,
+            "type": "Person",
+            "attribute": {
+                "name": "meu nome teste"
+            }
+        }
