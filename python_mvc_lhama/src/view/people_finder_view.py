@@ -13,3 +13,16 @@ class PeopleFinderView:
         }
 
         return person_finder_information
+    
+    def find_sucess_view(self, message: Dict) -> None:
+        os.system('clear')
+
+        sucess_message = f'''
+        Pessoa encontrada com sucesso!
+
+        tipo: {message['type']}
+        Registros encontrados: {message['count']}
+        Nome: {message['infos']['name']}
+        '''
+        print(sucess_message)
+
