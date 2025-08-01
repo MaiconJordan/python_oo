@@ -22,7 +22,16 @@ class PeopleFinderView:
 
         tipo: {message['type']}
         Registros encontrados: {message['count']}
-        Nome: {message['infos']['name']}
+        Nome: {message['infos']["name"]}
         '''
         print(sucess_message)
+
+    def find_person_error(self, error: str) -> None:
+        os.system('clear')
+        fail_message = f'''
+        Ocorreu um erro ao buscar a pessoa:
+        
+        error: {error}
+'''
+        print(fail_message)
 

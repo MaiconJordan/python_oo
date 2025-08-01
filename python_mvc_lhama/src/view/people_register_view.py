@@ -40,3 +40,4 @@ class PeopleRegisterView:
         error: {error}
 '''
         print(fail_message)
+

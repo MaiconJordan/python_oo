@@ -5,7 +5,7 @@ class PeopleFinderController:
         try:
             self.__validate_fields(person_finder_information)
             # Simulate a database search
-            response = self.__format_response(person_finder_information)
+            response = self.__format_response(None)
             return {"success": True, "message": response}
         except Exception as exception:
             return {"success": False, "message": str(exception)}
@@ -14,12 +14,12 @@ class PeopleFinderController:
         if not isinstance(person_finder_information["name"], str):
             raise ValueError("O nome é obrigatório e deve ser uma string não vazia.")
         
-    def __format_response(self, person_finder_information: str) -> Dict:
+    def __format_response(self, person: str) -> Dict:
         # Simulate a response format
         return {
             "count": 1,
             "type": "Person",
-            "attribute": {
+            "infos": {
                 "name": "meu nome teste"
             }
         }
