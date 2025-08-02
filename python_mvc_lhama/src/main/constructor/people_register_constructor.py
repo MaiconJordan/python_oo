@@ -2,6 +2,7 @@ from src.view.people_register_view import PeopleRegisterView
 from src.controller.people_register_controller import PeopleRegisterController
 
 def  people_register_constructor():
+    #comentario aleatorio
     people_register_view = PeopleRegisterView()
     people_registter_controller = PeopleRegisterController()
 
