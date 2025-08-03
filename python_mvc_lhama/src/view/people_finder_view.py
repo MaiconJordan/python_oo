@@ -2,36 +2,39 @@ import os
 from typing import Dict
 
 class PeopleFinderView:
-    def find_person_view(self) -> Dict[str, str]:
-        os.system('clear')
+    def find_person_view(self) -> Dict:
+        os.system('cls||clear')
 
-        print("Buscar de pessoa\n")
-        name = input("Digite o nome da pessoa: ")
+        print('Buscar Pessoa \n\n')
+        name = input('Determine o nome da pessoa para busca: ')
 
-        person_finder_information = {
+        person_finder_informations = {
             "name": name
         }
 
-        return person_finder_information
-    
-    def find_sucess_view(self, message: Dict) -> None:
-        os.system('clear')
+        return person_finder_informations
 
-        sucess_message = f'''
-        Pessoa encontrada com sucesso!
+    def find_person_success(self, message: Dict) -> None:
+        os.system('cls||clear')
 
-        tipo: {message['type']}
-        Registros encontrados: {message['count']}
-        Nome: {message['infos']["name"]}
+        success_message = f'''
+            Usuario encontrado com sucesso!
+
+            Tipo: { message["type"] }
+            Registros: { message["count"] }
+            Infos:
+                Name: { message["infos"]["name"] }
+                Age: { message["infos"]["age"] }
+                Height: { message["infos"]["height"] }
         '''
-        print(sucess_message)
+        print(success_message)
 
-    def find_person_error(self, error: str) -> None:
-        os.system('clear')
+    def find_person_fail(self, error: str) -> None:
+        os.system('cls||clear')
+
         fail_message = f'''
-        Ocorreu um erro ao buscar a pessoa:
-        
-        error: {error}
-'''
-        print(fail_message)
+            Falha ao encontrar usuario!
 
+            Erro: { error }
+        '''
+        print(fail_message)

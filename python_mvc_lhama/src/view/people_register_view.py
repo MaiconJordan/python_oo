@@ -32,7 +32,7 @@ class PeopleRegisterView:
 '''
         print(sucess_message)
 
-    def registry_person_error(self, error: str) -> None:
+    def registry_person_fail(self, error: str) -> None:
         os.system('clear')
         fail_message = f'''
         Ocorreu um erro ao cadastrar a pessoa:

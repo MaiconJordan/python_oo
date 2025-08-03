@@ -1,19 +1,15 @@
+from src.models.entities.person import Person
+
 class __PersonRepository:
-    def __init__(self):
-        self._people = []
+    def __init__(self) -> None:
+        self.__people = []
 
-    def registry_person(self, person):
-        self._people.append(person)
+    def registry_person(self, person: Person) -> None:
+        self.__people.append(person)
 
-
-    def find_person_by_name(self, name):
-        for person in self._people:
-            if person.name == name:
-                return person
+    def find_person_by_name(self, name: str) -> Person:
+        for person in self.__people:
+            if person.name == name: return person
         return None
-
-    def remove_person(self, person):
-        if person in self._people:
-            self._people.remove(person)
 
 person_repository = __PersonRepository()
